@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wJR-zR-XFc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Trait Logging View Controller-->
+        <scene sceneID="raW-uJ-UsZ">
+            <objects>
+                <tableViewController id="NJ9-x0-7UG" customClass="TraitLoggingViewController" customModule="TestTraitCollectinOverridingXcode11" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mm8-s9-zbw" customClass="TraitLoggingTableView" customModule="TestTraitCollectinOverridingXcode11" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="59" id="24n-do-YBd" customClass="TraitLoggingCell" customModule="TestTraitCollectinOverridingXcode11" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="59"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="24n-do-YBd" id="zo4-uV-Uvb">
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="59"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbF-jQ-I2C" customClass="TraitLoggingLabel" customModule="TestTraitCollectinOverridingXcode11" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="11" width="355" height="37"/>
+                                            <string key="text">This label scales with the users selected type size even though there is an overriden trait collection askig for extraExtraExtraLarge font</string>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="LbF-jQ-I2C" firstAttribute="top" secondItem="zo4-uV-Uvb" secondAttribute="topMargin" id="60X-l8-wfq"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="LbF-jQ-I2C" secondAttribute="bottom" priority="999" id="JR0-km-fLf"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="LbF-jQ-I2C" secondAttribute="trailing" id="WJA-E1-6zR"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="LbF-jQ-I2C" secondAttribute="leading" id="lbD-rf-230"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="s1P-C6-t64" kind="show" id="jTb-Jh-mF4"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="NJ9-x0-7UG" id="WR7-7z-ils"/>
+                            <outlet property="delegate" destination="NJ9-x0-7UG" id="dvk-7y-wZ5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ebg-Hu-WtX"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WAp-O0-rVf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053.6231884057972" y="22.767857142857142"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5Xd-3y-8Cc">
+            <objects>
+                <viewController id="s1P-C6-t64" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FO5-Aj-xtc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This label scales with the overriden trait collection" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rW1-Dp-FH1" customClass="TraitLoggingLabel" customModule="TestTraitCollectinOverridingXcode11" customModuleProvider="target">
+                                <rect key="frame" x="28" y="383" width="358" height="42.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AjA-gs-0l4">
+                                <rect key="frame" x="140.5" y="778" width="133" height="30"/>
+                                <state key="normal" title="Another Table View"/>
+                                <connections>
+                                    <segue destination="NJ9-x0-7UG" kind="show" id="Mal-q3-4kS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="AjA-gs-0l4" firstAttribute="centerX" secondItem="c6L-ny-YDX" secondAttribute="centerX" id="8Wo-YX-IOT"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="AjA-gs-0l4" secondAttribute="bottom" id="BgL-fE-1ol"/>
+                            <constraint firstItem="rW1-Dp-FH1" firstAttribute="leading" secondItem="FO5-Aj-xtc" secondAttribute="leadingMargin" constant="8" id="Hwq-7C-Nhk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rW1-Dp-FH1" secondAttribute="trailing" constant="8" id="d95-hZ-rJ6"/>
+                            <constraint firstItem="rW1-Dp-FH1" firstAttribute="centerY" secondItem="c6L-ny-YDX" secondAttribute="centerY" id="yXQ-Qo-GOt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="c6L-ny-YDX"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wNi-rg-qq0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cqT-yp-n22" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800" y="26"/>
+        </scene>
+        <!--Custom Navigation Controller-->
+        <scene sceneID="cK8-7S-3Dl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wJR-zR-XFc" customClass="CustomNavigationController" customModule="TestTraitCollectinOverridingXcode11" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fcV-A7-ZyH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NJ9-x0-7UG" kind="relationship" relationship="rootViewController" id="UzV-zS-6E3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cKL-Fo-uwZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.33333333333334" y="23.4375"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jTb-Jh-mF4"/>
+        <segue reference="Mal-q3-4kS"/>
+    </inferredMetricsTieBreakers>
+</document>
